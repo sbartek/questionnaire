@@ -22,14 +22,39 @@ end
 class UserQuestionnaire
 
   attr_accessor :questionnaire
-  attr_reader :answers
   
   def questions
     self.questionnaire.questions 
   end
 
+  def answers
+    []
+  end
+
+  def for_question(question)
+    @questions_answers= self.answers.find do |questions_answers| 
+      questions_answers.question == question
+    end 
+    if not @questions_answers 
+      @questions_answers = QuestionsAnswers.new(
+          user_questionnaire: self, question: question)
+    end
+    return @questions_answers
+  end
 end
 
+class QuestionsAnswers
+
+  attr_accessor :questionnaire
+  attr_accessor :question
+  attr_accessor :answer
+
+  def initialize(arg_hash={})
+    @questionnaire= arg_hash[:questionnaire]
+    @question= arg_hash[:question]
+    @answer= arg_hash[:answer]
+  end
+end
 
 def create_questionnaire_from_hash(arg_hash={})
   @title = arg_hash[:title]

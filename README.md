@@ -13,12 +13,11 @@ I will try BDD using Minitest.
 
 ## Today
 
-* Improving work on project by creating a porper on and coping it.
-* Implements spec for a user questionnaire.
+* Implements QuestionsAnswer class and UserQuestionnaire
 
 ## Next
 
-* Implements UserQuestionnaire and reads Prost answers.
+* Finishing with UserQuestionnaire and reads Prost answers.
 
 ## Future ideas
 
@@ -38,5 +37,5 @@ I will try BDD using Minitest.
 * Implements classes Question and Questionnaire
 * Implements method for creating a questionnaire from a hash
 * Implements spec for a user questionnaire.
-
+* Implements spec for a class QuestionsAnswers and the class.
 

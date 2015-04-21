@@ -84,18 +84,22 @@ describe UserQuestionnaire do
     end 
 
     describe 'we set set answer to a question' do
-      before do
-        @answer = "A1"
-        @user_questionnaire.for_question(@question1).set_answer(@answer)
-      end
       it 'must have set answer to question' do
-        @user_questionnaire.for_question(@question1).answer.must_be(@answer)
+        @answer = "A1"
+        @user_questionnaire.for_question(@question1).answer= @answer
+        @user_questionnaire.for_question(@question1).answer.must_equal(@answer)
       end
     end
   end
 end
 
 describe QuestionsAnswers do
+
+  before do 
+    @question = 'Q'
+    @questionnaire = 'QA'
+    @answer = 'A'
+  end
 
   describe 'initialize with no args' do
     before do
@@ -115,27 +119,24 @@ describe QuestionsAnswers do
     end
 
     it 'must be able to set question, answer, questionnaire' do
-      question = 'Q'
-      questionnaire = 'QA'
-      answer = 'A'
-      questions_answers.question= question
-      questions_answers.answer= answer
-      questions_answers.questionnaire= questionnaire
-      
+      @questions_answers.question= @question
+      @questions_answers.answer= @answer
+      @questions_answers.questionnaire= @questionnaire
+      @questions_answers.question.must_equal(@question)
+      @questions_answers.answer.must_equal(@answer)
+      @questions_answers.questionnaire.must_equal(@questionnaire)
     end
   end
 
   describe 'initialize with args' do
     before do
-      @question = 'Q'
-      @questionnaire = 'QA'
-      @answer = 'A'
       @questions_answers = 
-        QuestionsAnswers.new question: @question, answer: @answer, 
-        questionnaire: @questionnaire
+        QuestionsAnswers.new({
+          question: @question, answer: @answer, 
+          questionnaire: @questionnaire})
     end
 
-    it 'must question, answer, questionnaire as was set' do
+    it 'must have question, answer, questionnaire as was set' do
       @questions_answers.question.must_equal(@question)
       @questions_answers.answer.must_equal(@answer)
       @questions_answers.questionnaire.must_equal(@questionnaire)
@@ -149,10 +150,8 @@ describe QuestionsAnswers do
       @questions_answers.must_respond_to(:questionnaire)
     end
   end
-
   
 end
-
 
 describe 'create_questionnaire_from_hash' do
   it 'must create questionnaire' do
