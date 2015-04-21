@@ -63,24 +63,24 @@ describe UserQuestionnaire do
   end
 
   it 'must respond to answers' do 
-    @user_questionnaire.must_respond_to(answers)
+    @user_questionnaire.must_respond_to(:answers)
   end
 
   describe  'when one sets questionnaire' do
     before do
       @question1 = 'Q1'
       @question2 = 'Q2'
-      @questions = [@quesiton1, @question2]
+      @questions = [@question1, @question2]
       @questionnaire = Questionnaire.new questions: @questions
       @user_questionnaire.questionnaire = @questionnaire
     end
 
-    it 'must respond to question' do
+    it 'must respond to questions' do
       @user_questionnaire.must_respond_to(:questions)
     end
 
     it 'must have questions the same as questionnaire has' do
-      @user_questionnaire.questions.must_be(@questionnaire.questions)
+      @user_questionnaire.questions.must_equal(@questionnaire.questions)
     end 
 
     describe 'we set set answer to a question' do
@@ -93,6 +93,64 @@ describe UserQuestionnaire do
       end
     end
   end
+end
+
+describe QuestionsAnswers do
+
+  describe 'initialize with no args' do
+    before do
+      @questions_answers = QuestionsAnswers.new
+    end
+
+    it 'must respond to question' do
+      @questions_answers.must_respond_to(:question)
+    end
+
+    it 'must respond to answer' do
+      @questions_answers.must_respond_to(:answer)
+    end
+
+    it 'must respond to questionnaire' do 
+      @questions_answers.must_respond_to(:questionnaire)
+    end
+
+    it 'must be able to set question, answer, questionnaire' do
+      question = 'Q'
+      questionnaire = 'QA'
+      answer = 'A'
+      questions_answers.question= question
+      questions_answers.answer= answer
+      questions_answers.questionnaire= questionnaire
+      
+    end
+  end
+
+  describe 'initialize with args' do
+    before do
+      @question = 'Q'
+      @questionnaire = 'QA'
+      @answer = 'A'
+      @questions_answers = 
+        QuestionsAnswers.new question: @question, answer: @answer, 
+        questionnaire: @questionnaire
+    end
+
+    it 'must question, answer, questionnaire as was set' do
+      @questions_answers.question.must_equal(@question)
+      @questions_answers.answer.must_equal(@answer)
+      @questions_answers.questionnaire.must_equal(@questionnaire)
+    end
+
+    it 'must respond to answer' do
+      @questions_answers.must_respond_to(:answer)
+    end
+
+    it 'must respond to questionnaire' do 
+      @questions_answers.must_respond_to(:questionnaire)
+    end
+  end
+
+  
 end
 
 

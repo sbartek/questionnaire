@@ -19,6 +19,18 @@ class Question
 
 end
 
+class UserQuestionnaire
+
+  attr_accessor :questionnaire
+  attr_reader :answers
+  
+  def questions
+    self.questionnaire.questions 
+  end
+
+end
+
+
 def create_questionnaire_from_hash(arg_hash={})
   @title = arg_hash[:title]
   @questions = []
