@@ -11,9 +11,13 @@ Proust.
 
 I will try BDD using Minitest.
 
+In order to run specs
+    ruby spec/runner.rb
+
 ## Today
 
-* Implements QuestionsAnswer class and UserQuestionnaire
+* Split spec into separated files
+
 
 ## Next
 
@@ -40,4 +44,4 @@ I will try BDD using Minitest.
 * Implements method for creating a questionnaire from a hash
 * Implements spec for a user questionnaire.
 * Implements spec for a class QuestionsAnswers and the class.
-
+* Implements QuestionsAnswer class and UserQuestionnaire
