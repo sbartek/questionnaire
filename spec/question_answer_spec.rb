@@ -1,6 +1,6 @@
 require_relative 'helper'
 
-describe QuestionsAnswers do
+describe QuestionAnswer do
 
   before do 
     @question = 'Q'
@@ -10,8 +10,8 @@ describe QuestionsAnswers do
 
   describe 'initialize with no args' do
     before do
-      QuestionsAnswers.class_variable_set :@@all, [] 
-      @questions_answers = QuestionsAnswers.new
+      QuestionAnswer.class_variable_set :@@all, [] 
+      @questions_answers = QuestionAnswer.new
     end
 
     it 'must respond to question' do
@@ -36,9 +36,9 @@ describe QuestionsAnswers do
     end
 
     it 'must store all initialized instances' do
-      QuestionsAnswers.all.must_equal([@questions_answers])
-      @questions_answers2 = QuestionsAnswers.new
-      QuestionsAnswers.all.must_equal([@questions_answers, 
+      QuestionAnswer.all.must_equal([@questions_answers])
+      @questions_answers2 = QuestionAnswer.new
+      QuestionAnswer.all.must_equal([@questions_answers, 
                                        @questions_answers2])
     end
   end
@@ -46,7 +46,7 @@ describe QuestionsAnswers do
   describe 'initialize with args' do
     before do
       @questions_answers = 
-        QuestionsAnswers.new({
+        QuestionAnswer.new({
           question: @question, answer: @answer, 
           user_questionnaire: @user_questionnaire})
     end

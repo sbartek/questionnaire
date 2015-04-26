@@ -1,4 +1,6 @@
 require_relative 'helper'
+require './create_questionnaire'
+
 
 describe 'create_questionnaire_from_hash' do
   it 'must create questionnaire' do
