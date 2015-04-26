@@ -16,7 +16,7 @@ In order to run specs
 
 ## Today
 
-* Split spec into separated files
+* Reorganizes directory structure of classes into one similar to rails
 
 
 ## Next
