@@ -1,3 +1,6 @@
 require 'minitest/autorun'
 
-require_relative '../app/questionnaire'
+Dir["./app/models/*.rb"].each do |fn|
+  require fn
+end
+
