@@ -3,7 +3,13 @@ require_relative 'question_answer'
 class UserQuestionnaire
 
   attr_accessor :questionnaire
-  
+  attr_accessor :user
+
+  def initialize(args_hash={})
+    @questionnaire = args_hash[:questionnaire]
+    @user = args_hash[:user]
+  end
+
   def questions
     self.questionnaire.questions 
   end

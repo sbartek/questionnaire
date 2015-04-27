@@ -16,8 +16,8 @@ In order to run specs
 
 ## Today
 
-* Reorganizes directory structure of classes into one similar to rails
-
+* Implements spec for creating user_questionaire
+  (answers to questionnaire) from hash
 
 ## Next
 
@@ -45,3 +45,4 @@ In order to run specs
 * Implements spec for a user questionnaire.
 * Implements spec for a class QuestionsAnswers and the class.
 * Implements QuestionsAnswer class and UserQuestionnaire
+* Reorganizes directory structure of classes into one similar to rails

@@ -27,6 +27,10 @@ describe UserQuestionnaire do
       @user_questionnaire.must_respond_to(:questions)
     end
 
+    it 'must respond to user' do
+      @user_questionnaire.must_respond_to(:user)
+    end
+
     it 'must have questions the same as questionnaire has' do
       @user_questionnaire.questions.must_equal(@questionnaire.questions)
     end 
