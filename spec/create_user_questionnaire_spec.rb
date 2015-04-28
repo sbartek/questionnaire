@@ -10,8 +10,8 @@ describe 'create_user_questionnaire_from_hash' do
     @questionnaire = create_questionnaire_from_hash(
         {questions: @questions})
     @user = "Tom"
-    @questions_answers = [{sentence: @sentence1, answer: "Tomy"}, 
-                          {sentence: @sentence2, answer: "Yorky"}]
+    @questions_answers = [{question_sentence: @sentence1, answer: "Tomy"}, 
+                          {question_sentence: @sentence2, answer: "Yorky"}]
     @user_questionnaire = create_user_questionnaire_from_hash(
         {user: @user,
          questionnaire: @questionnaire, 
