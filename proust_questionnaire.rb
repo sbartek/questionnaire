@@ -3,8 +3,15 @@ require 'yaml'
 require_relative 'create_questionnaire'
 require_relative 'create_user_questionnaire'
 
+proust_fn = 'proust_short.yaml'
+
+fn = ARGV[0] 
+if not fn or not File.exists?(fn)
+  fn = proust_fn
+end
+
 questions_hash = ''
-File.open('proust.yaml', mode='r') do |f|
+File.open(fn, mode='r') do |f|
   questions_hash = f.read
 end
 questions_from_yaml = YAML.load(questions_hash)
