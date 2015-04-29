@@ -16,14 +16,18 @@ In order to run specs
 
 ## Today
 
-* Implements creating answers form hash
+Finally done.
 
-*Execute the following command* in order to generate questionnare of
- Proust and to see his answers.
+*Execute the following command* 
 
 ```
 ruby proust_questionnaire.rb 
 ```
+
+This wil prompt you for name, and ask questions from short
+questionnaire. Then it will print your answers together with Proust
+ones. 
+
 
 ## Next
 
@@ -31,7 +35,7 @@ ruby proust_questionnaire.rb
 
 ## Future ideas
 
-* Terminal interface
+
 * Parse Prost Answers from web (using nokogiri?)
 * Change classes into ActiveRecord clases to save answers
 * Create web interface (rails?)
@@ -52,3 +56,4 @@ ruby proust_questionnaire.rb
 * Reorganizes directory structure of classes into one similar to rails
 * Implements spec for creating user_questionaire
   (answers to questionnaire) from hash
+* Implements creating answers form hash
